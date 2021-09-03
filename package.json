@@ -1,0 +1,30 @@
+{
+  "name": "obsidian-badgen",
+  "version": "0.0.1",
+  "description": "This is a badgen plugin for Obsidian.",
+  "author": {
+    "name": "hypc",
+    "url": "https://github.com/hypc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypc/obsidian-badgen.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.10",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-less": "^5.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "obsidian": "^0.12.0",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4",
+    "vinyl": "^2.2.1"
+  }
+}
