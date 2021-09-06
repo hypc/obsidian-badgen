@@ -99,6 +99,32 @@ const DOCKER_BADGENS: Badgen[] = [{
     link: 'https://hub.docker.com/r/{0}'
 }]
 
+const PYPI_BADGENS: Badgen[] = [{
+    img: 'https://img.shields.io/static/v1?logo=pypi&label=pypi&color=informational&message={0}',
+    link: 'https://pypi.org/project/{0}/'
+}, {
+    img: 'https://img.shields.io/pypi/v/{0}?logo=pypi',
+    link: 'https://pypi.org/project/{0}/'
+}, {
+    img: 'https://img.shields.io/pypi/pyversions/{0}?logo=pypi',
+    link: 'https://pypi.org/project/{0}/'
+}, {
+    img: 'https://img.shields.io/pypi/wheel/{0}?logo=pypi',
+    link: 'https://pypi.org/project/{0}/'
+}, {
+    img: 'https://img.shields.io/pypi/l/{0}?logo=pypi',
+    link: 'https://pypi.org/project/{0}/'
+}, {
+    img: 'https://img.shields.io/pypi/dd/{0}?logo=pypi',
+    link: 'https://pypi.org/project/{0}/'
+}, {
+    img: 'https://img.shields.io/pypi/dw/{0}?logo=pypi',
+    link: 'https://pypi.org/project/{0}/'
+}, {
+    img: 'https://img.shields.io/pypi/dm/{0}?logo=pypi',
+    link: 'https://pypi.org/project/{0}/'
+}]
+
 export default class BadgenPlugin extends Plugin {
     async onload () {
         this.registerMarkdownPostProcessor(async (el) => {
@@ -121,6 +147,8 @@ export default class BadgenPlugin extends Plugin {
                 return DOCKER_BADGENS.map(badgen => this._generator(repo, badgen))
             case 'npm':
                 return NPM_BADGENS.map(badgen => this._generator(repo, badgen))
+            case 'pypi':
+                return PYPI_BADGENS.map(badgen => this._generator(repo, badgen))
             default:
                 return []
         }
